@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CANDIDATE_INFORMATION } from 'src/app/shared/constants/constant-data';
 import { Candidate } from 'src/app/shared/model/candidate.model';
 

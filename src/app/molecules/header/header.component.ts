@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HEADER } from 'src/app/shared/constants/constant-data';
 
 @Component({

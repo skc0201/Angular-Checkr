@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { COURTSERACHES_HEADER, COURT_SEARCHES } from 'src/app/shared/constants/constant-data';
 
