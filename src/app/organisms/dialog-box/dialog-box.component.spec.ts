@@ -78,4 +78,12 @@ describe('DialogBoxComponent', () => {
     const board = fixture.debugElement.query(By.css('.checkbox-header')).nativeElement;
      expect(board.innerHTML).toEqual(component.EMAIL_CONTENT[7]);
   });
+  it('should have Button text', () => {
+    const board = fixture.debugElement.query(By.css('button')).nativeElement;
+    expect(board.innerHTML).toEqual(component.DIALOGBOX_BUTTON);
+  });
+  it('should  Button clickable', () => {
+    const board = fixture.debugElement.query(By.css('button')).nativeElement;
+    board.click();
+  });
 });

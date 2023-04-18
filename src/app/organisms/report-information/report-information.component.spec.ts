@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReportInformationComponent } from './report-information.component';
+import { By } from '@angular/platform-browser';
 
 describe('ReportInformationComponent', () => {
   let component: ReportInformationComponent;
@@ -43,5 +44,13 @@ describe('ReportInformationComponent', () => {
     expect(component.data.tat).toEqual(DataInfo.tat);
     expect(component.data.createdAt).toEqual(DataInfo.createdAt);
     expect(component.data.completedDate).toEqual(DataInfo.completedDate);
+  });
+  it('should have image src in card in last row', () => {
+    const board = fixture.debugElement.query(By.css('.card-container'));
+    fixture.detectChanges();
+    const src1 = board.childNodes[0].nativeNode;
+    const src2 = board.childNodes[1].nativeNode;
+     expect(src1).toBeDefined();
+     expect(src2).toBeDefined();
   });
 });

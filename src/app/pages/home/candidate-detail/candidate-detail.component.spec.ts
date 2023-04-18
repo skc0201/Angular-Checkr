@@ -4,6 +4,7 @@ import { CandidateDetailComponent } from './candidate-detail.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { CandidateService } from 'src/app/shared/service/candidate.service';
+import { By } from '@angular/platform-browser';
 
 describe('CandidateDetailComponent', () => {
   let component: CandidateDetailComponent;
@@ -56,5 +57,17 @@ describe('CandidateDetailComponent', () => {
   it('should have candidate Report Information in candidate detail page', () => {
     expect(component.candidateDetail.status).toEqual(DataInfo.status);
     expect(component.candidateDetail.tat).toEqual(DataInfo.tat);
+  });
+  it('should have export image src in header', () => {
+    const ele = fixture.debugElement.query(By.css('.header-right'));
+    fixture.detectChanges();
+    const src = ele.childNodes[0].nativeNode['src'];
+    expect(src).toContain('http://localhost:9877/assets/icons/preadverse.svg');
+  });
+  it('should have manual order image src in header', () => {
+    const ele = fixture.debugElement.query(By.css('.header-right'));
+    fixture.detectChanges();
+    const src = ele.childNodes[1].nativeNode['src'];
+    expect(src).toContain('http://localhost:9877/assets/icons/engage.svg');
   });
 });

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoaderComponent } from './loader.component';
+import { By } from '@angular/platform-browser';
 
 describe('LoaderComponent', () => {
   let component: LoaderComponent;
@@ -29,5 +30,11 @@ describe('LoaderComponent', () => {
   it('should show success loader', () => {
     component.isSuccess = 'true';
     expect(component).toBeDefined();
+  });
+  it('should have image src in loader', () => {
+    component.isSuccess = 'true';
+    fixture.detectChanges();
+    const board = fixture.debugElement.query(By.css('.success-loader')).nativeElement;
+     expect(board).toBeDefined();
   });
 });

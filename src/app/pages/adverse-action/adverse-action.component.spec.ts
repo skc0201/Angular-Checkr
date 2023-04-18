@@ -78,4 +78,20 @@ describe('AdverseActionComponent', () => {
     fixture.detectChanges();
     expect(board.childNodes[0].nativeNode.textContent).toEqual(component.ADVERSEACTION_FOOTER);
   });
+  it('should have Button text', () => {
+    const board = fixture.debugElement.query(By.css('button')).nativeElement;
+    expect(board.innerHTML).toEqual(component.ADVERSEACTION_BUTTON);
+  });
+  it('should  Button disables', () => {
+    component.isButtonDisable = true;
+    fixture.detectChanges();
+    const board = fixture.debugElement.query(By.css('button')).nativeElement;
+    expect(board.disabled).toBeTruthy();
+  });
+  it('should  Button clickable', () => {
+    component.isButtonDisable = true;
+    fixture.detectChanges();
+    const board = fixture.debugElement.query(By.css('button')).nativeElement;
+    board.click();
+  });
 });

@@ -27,4 +27,16 @@ describe('HeaderComponent', () => {
     const board = fixture.debugElement.query(By.css('.header-text')).nativeElement;
      expect(board.innerHTML.trim()).toEqual(component.HEADER);
   });
+  it('should have export image src in header', () => {
+    const ele = fixture.debugElement.query(By.css('.header-right'));
+    fixture.detectChanges();
+    const src = ele.childNodes[0].nativeNode['src'];
+    expect(src).toContain('http://localhost:9877/assets/icons/export.svg');
+  });
+  it('should have manual order image src in header', () => {
+    const ele = fixture.debugElement.query(By.css('.header-right'));
+    fixture.detectChanges();
+    const src = ele.childNodes[1].nativeNode['src'];
+    expect(src).toContain('http://localhost:9877/assets/icons/manualorder.svg');
+  });
 });

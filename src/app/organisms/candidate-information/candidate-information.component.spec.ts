@@ -44,5 +44,24 @@ describe('CandidateInformationComponent', () => {
     const board = fixture.debugElement.query(By.css('mat-panel-title')).nativeElement;
      expect(board.innerHTML.trim()).toEqual(component.CANDIDATE_INFORMATION);
   });
+  it('should have image src in card in first row', () => {
+    const board = fixture.debugElement.query(By.css('.card-container'));
+    fixture.detectChanges();
+    const src1 = board.childNodes[0].nativeNode;
+    const src2 = board.childNodes[1].nativeNode;
+    const src3 = board.childNodes[2].nativeNode;
+     expect(src1).toBeDefined();
+     expect(src2).toBeDefined();
+     expect(src3).toBeDefined();
+
+  });
+  it('should have image src in card in last row', () => {
+    const board = fixture.debugElement.query(By.css('.last-container'));
+    fixture.detectChanges();
+    const src1 = board.childNodes[0].nativeNode;
+    const src2 = board.childNodes[1].nativeNode;
+     expect(src1).toBeDefined();
+     expect(src2).toBeDefined();
+  });
 
 });

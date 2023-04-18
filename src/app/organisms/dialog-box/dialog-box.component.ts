@@ -11,12 +11,6 @@ import { CandidateService } from 'src/app/shared/service/candidate.service';
   styleUrls: ['./dialog-box.component.css']
 })
 export class DialogBoxComponent implements OnInit {
-  CHECKBOX_HEADER(CHECKBOX_HEADER: any) {
-    throw new Error('Method not implemented.');
-  }
-  ADVERSEACTION_FOOTER(ADVERSEACTION_FOOTER: any) {
-    throw new Error('Method not implemented.');
-  }
   candidateDetail: Candidate;
   warningText:string[] = WARNING_TEXT;
   attachmenttext:string[] = ATTACHMENT_TEXT;
