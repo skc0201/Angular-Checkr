@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { CandidateService } from 'src/app/shared/service/candidate.service';
@@ -58,7 +58,6 @@ export class CandidateListComponent implements OnInit {
     this.router.navigate(['candidatedetail/',id] , {relativeTo: this.route});
   }
   onChecked(val: string) {
-    const value = this.checkboxes.value;
     const updatedValues = {
       "all": false,
       "clear": false,

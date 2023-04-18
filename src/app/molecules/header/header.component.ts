@@ -6,11 +6,7 @@ import { HEADER } from 'src/app/shared/constants/constant-data';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   readonly HEADER=HEADER;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

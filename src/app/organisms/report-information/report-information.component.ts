@@ -7,14 +7,10 @@ import { Candidate } from 'src/app/shared/model/candidate.model';
   templateUrl: './report-information.component.html',
   styleUrls: ['./report-information.component.css']
 })
-export class ReportInformationComponent implements OnInit {
+export class ReportInformationComponent {
   panelOpenState = false;
   readonly REPORTINFORMATION_HEADER = REPORTINFORMATION_HEADER;
   @Input() data: Candidate;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

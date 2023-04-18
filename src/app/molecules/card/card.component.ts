@@ -9,8 +9,6 @@ export class CardComponent implements OnInit  {
   @Input() imgSrc: string;
   @Input() header1: string;
   @Input() header2: string;
-  constructor() {
-  }
 
   ngOnInit(): void {
     if(this.header1 === 'Adjudication' && this.header2 === ""){

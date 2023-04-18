@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Candidate } from 'src/app/shared/model/candidate.model';
 import { CandidateService } from 'src/app/shared/service/candidate.service';
@@ -56,9 +56,9 @@ export class AdverseActionComponent implements OnInit {
    this.checkedOptions = [];
    if(allValues.includes(true)){
     this.isButtonDisable = false;
-    allValues.map((val,index) =>{
+    allValues.forEach((val,index) =>{
       if(val){
-       return this.checkedOptions.push(this.checkboxOptions[index]);
+        this.checkedOptions.push(this.checkboxOptions[index]);
       }
     })
    }

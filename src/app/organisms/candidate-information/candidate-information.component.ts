@@ -7,15 +7,9 @@ import { Candidate } from 'src/app/shared/model/candidate.model';
   templateUrl: './candidate-information.component.html',
   styleUrls: ['./candidate-information.component.css']
 })
-export class CandidateInformationComponent implements OnInit {
+export class CandidateInformationComponent {
   panelOpenState = false;
   @Input() data: Candidate;
 readonly CANDIDATE_INFORMATION =CANDIDATE_INFORMATION;
-  constructor() {
-
-   }
-
-  ngOnInit(): void {
-  }
 
 }

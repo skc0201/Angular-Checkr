@@ -5,11 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.css']
 })
-export class LoaderComponent implements OnInit {
+export class LoaderComponent {
 @Input() isSuccess:string;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
