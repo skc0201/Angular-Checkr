@@ -1,0 +1,26 @@
+<div class="main">
+  <mat-accordion class="information">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header class="expansion-header">
+        <mat-panel-title>
+          {{REPORTINFORMATION_HEADER}}
+              </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-divider></mat-divider>
+      <div class="card-container">
+      <app-card imgSrc="assets/icons/status.svg" header1="Status" header2={{data.status}}></app-card>
+      <app-card imgSrc="assets/icons/adjudication.svg" header1="Adjudication" header2={{data.adjudication}}></app-card>
+      <app-card imgSrc="assets/icons/package.svg" header1="Package" header2="Employee pro"></app-card>
+
+    </div>
+    <div class="card-container">
+      <app-card imgSrc="assets/icons/created.svg" header1="Created At" header2={{data.createdAt}}></app-card>
+      <app-card imgSrc="assets/icons/completion.svg" header1="Completed Date" header2={{data.completedDate}}></app-card>
+      <app-card imgSrc="assets/icons/tat.svg" header1="Turn Around Time " header2={{data.tat}}></app-card>
+
+    </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  </div>

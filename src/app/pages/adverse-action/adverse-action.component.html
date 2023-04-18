@@ -1,0 +1,58 @@
+<div class="adverse-container">
+  <div class="left-header">
+    <img src="assets/icons/backbutton.svg" alt="" (click)="backButton()" routerLinkActive="router-link-active" style="cursor: pointer;"/>
+  <span class="header-text">{{DIALOGBOX_HEADER}}</span>
+   </div>
+<div class="email-container">
+  <div class="email-from">
+<span class="email-title">From: </span> {{FROM}}
+</div>
+<mat-divider></mat-divider>
+<div class="email-from">
+  <span class="email-title">To: </span> {{candidateDetail.email}}
+  </div>
+  <mat-divider></mat-divider>
+  <div class="email-from">
+    <span class="email-title">Subject: </span>  {{EMAIL_SUBJECT}}
+    </div>
+    <mat-divider></mat-divider>
+    <br>
+    <div class="email-content">
+      <div class="email-content-1">
+      Dear {{candidateDetail.name}},
+      <br><br><br>
+      <p>{{EMAIL_CONTENT[0]}}</p>
+      <p>{{EMAIL_CONTENT[1]}}</p>
+      {{EMAIL_CONTENT[2]}}
+    </div>
+    <br><br>
+    <div>
+      <p class="checkbox-header">{{CHECKBOX_HEADER}}</p>
+      <section class="example-section" [formGroup]="checkboxes"  >
+        <p><mat-checkbox formControlName="cb0" color="primary" (ngModelChange)="onChecked(0)">{{checkboxOptions[0]}}</mat-checkbox></p>
+        <p><mat-checkbox formControlName="cb1" color="primary" (ngModelChange)="onChecked(1)">{{checkboxOptions[1]}}</mat-checkbox></p>
+        <p><mat-checkbox formControlName="cb2" color="primary" (ngModelChange)="onChecked(2)">{{checkboxOptions[2]}}</mat-checkbox></p>
+      </section>
+    </div>
+    <br>
+    <div class="email-content-1">
+      <p>
+        {{EMAIL_CONTENT[3]}}</p>
+         <p>{{EMAIL_CONTENT[4]}}</p>
+<br>
+        <p>{{EMAIL_CONTENT[5]}}</p>
+        <p>{{EMAIL_CONTENT[6]}}</p>
+
+    </div>
+    <br><br>
+    <mat-divider></mat-divider>
+
+    <div class="footer">
+      <div class="footer-left">
+     <p class="footer-text">{{ADVERSEACTION_FOOTER}}<img src="assets/icons/number.svg" style="padding-inline: 12px;"> <span>Days</span> </p>
+    </div>
+    <button class="btn btn-primary" [disabled]="isButtonDisable" (click)="onButtonClick()">{{ADVERSEACTION_BUTTON}}</button>
+    </div>
+    </div>
+</div>
+</div>

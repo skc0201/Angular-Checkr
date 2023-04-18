@@ -1,0 +1,31 @@
+.mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+
+}
+.main {
+  margin-left: 12px;
+  border-radius: 8px;
+}
+mat-panel-title{
+  color: #2C2C2E;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card-container{
+  margin-left: -4px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.last-container{
+  margin-left: -4px;
+  margin-top: 20px;
+  display: flex;
+}
+.expansion-header{
+  height: 56px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}

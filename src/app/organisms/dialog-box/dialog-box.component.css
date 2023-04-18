@@ -1,0 +1,122 @@
+.dialog-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-text{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: rgba(44, 44, 46, 1);
+  text-align: center;
+}
+.email-container{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 12px;
+}
+.email-from{
+background-color: white;
+color: rgba(105, 106, 110, 1);
+line-height: 12px;
+gap: 12px;
+}
+
+.email-title{
+color: rgba(10, 11, 13, 1);
+font-size: 12px;
+line-height: 18px;
+font-weight: 500;
+}
+.warning-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 81px;
+  width: 75%;
+  background-color: rgba(252, 229, 234, 1);
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: rgba(153, 77, 91, 1);
+  padding-inline: 30px;
+}
+.email-content-1{
+  color: rgba(105, 106, 110, 0.7);
+  font-size: 14px;
+  line-height: 10px;
+  font-weight: 400;
+}
+.checkbox-header{
+ color: rgba(44, 44, 46, 1);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+}
+.footer{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  height: 40px;
+}
+.footer-text{
+  color: rgba(105, 106, 110, 1);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  font-style: italic;
+}
+.btn{
+height: 40px;
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+align-items: center;
+padding: 8px 16px;
+gap: 4px;
+margin-right: 21px;
+}
+.example-section {
+  margin: 12px 0;
+}
+.example-margin {
+  margin: 0 12px;
+}
+.example-section {
+  margin: 12px 0;
+  color:rgba(105, 106, 110, 1);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.checked-options{
+  color: rgba(105, 106, 110, 0.7);
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 6px;
+}
+.loader{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 550px;
+  border-radius: 6px;
+  padding-left: 170px;
+}
+.loader-text{
+  color: rgba(44, 44, 46, 1);
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  margin-left: -130px;
+  margin-top: 30px;
+}

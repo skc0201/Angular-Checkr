@@ -1,0 +1,14 @@
+.header-right{
+  float: right;
+  cursor: pointer;
+}
+.header{
+  margin-left: 24px;
+}
+.header-text{
+font-size: 20px;
+line-height: 30px;
+font-weight: 500;
+vertical-align: center;
+color: rgba(44, 44, 46, 0.8);
+}

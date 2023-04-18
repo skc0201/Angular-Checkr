@@ -1,0 +1,29 @@
+.card{
+  height: 68px;
+  width: 330px;
+  padding: 12px;
+  background-color:rgba(229, 231, 237, 0.4);
+  border-radius: 12px;
+  padding: 8px;
+}
+.imgage{
+  height: 44px;
+  width: 44px;
+}
+
+.header-1{
+color: rgba(105, 106, 110, 1);
+font-weight: 400;
+line-height: 20px;
+font-size: 13px;
+font-style: normal;
+font-family: sans-serif;
+}
+.header-2{
+  margin-top: -10px;
+  margin-left:-2px;
+  color: rgba(44, 44, 46, 1);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}

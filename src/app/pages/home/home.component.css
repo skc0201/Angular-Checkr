@@ -1,0 +1,35 @@
+.sidenav-container {
+  height: fit-content;
+  margin: 16px;
+}
+
+.sidenav {
+  width: 240px;
+  height: 720px;
+  border: 0.3px solid black;
+  border-radius: 6px;
+  margin-top: 16px;
+  box-shadow: 1px 1px 0.5px rgba(45, 45, 47, 0.1);
+
+}
+
+.sidenav .mat-toolbar {
+  background-color: #FFFFFF;
+  margin-left: 15px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.sidenav-list{
+  /* background-color: aqua; */
+  padding-block: 12px;
+  margin-top: -32px;
+  cursor: pointer;
+}
+mat-nav-list:not(:last-child) {
+  margin-bottom: 250px;
+}

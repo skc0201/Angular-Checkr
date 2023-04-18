@@ -1,0 +1,30 @@
+<div class="main">
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header class="expansion-header">
+      <mat-panel-title>
+        {{CANDIDATE_INFORMATION}}
+            </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-divider></mat-divider>
+    <div class="card-container">
+    <app-card imgSrc="assets/icons/name.svg" header1="Name" header2={{data.name}}></app-card>
+    <app-card imgSrc="assets/icons/email.svg" header1="Email" header2={{data.email}}></app-card>
+    <app-card imgSrc="assets/icons/dob.svg" header1="DOB" header2={{data.dateofbirth}}></app-card>
+
+  </div>
+  <div class="card-container">
+    <app-card imgSrc="assets/icons/phone.svg" header1="Phone" header2={{data.phone}}></app-card>
+    <app-card imgSrc="assets/icons/zip.svg" header1="Zipcode" header2={{data.zip}}></app-card>
+    <app-card imgSrc="assets/icons/security.svg" header1="Social Security" header2="  XXX-XX-6789"></app-card>
+
+  </div>
+  <div class="last-container">
+    <app-card imgSrc="assets/icons/license.svg" header1="Drivers License" header2={{data.licence}}></app-card>
+    <app-card style="margin-left: 42px;" imgSrc="assets/icons/created.svg" header1="Created At " header2={{data.createdAt}}></app-card>
+  </div>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>

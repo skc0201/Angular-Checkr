@@ -1,0 +1,21 @@
+<div *ngIf="isLoading" style="text-align: center; margin-top: 300px;">
+  <app-loader isSuccess=false></app-loader>
+  <p>Processing.....</p>
+</div>
+<div class="container" *ngIf="!isLoading">
+<div class="header">
+  <div class="left-header">
+    <img src="assets/icons/backbutton.svg" alt="" (click)="backButton()" routerLinkActive="router-link-active" style="cursor: pointer;"/>
+  <span class="header-text">{{candidateDetail.name}}</span>
+   </div>
+<div class="header-right">
+<img src="assets/icons/preadverse.svg" alt="" style="margin-right: 16px;" (click)="OnAdverseAction()"/>
+<img src="assets/icons/engage.svg" alt="" (click)="OnEngage()"/>
+</div>
+</div>
+  <app-candidate-information [data]="candidateDetail"></app-candidate-information>
+  <app-report-information [data]="candidateDetail"></app-report-information>
+  <app-court-searches></app-court-searches>
+</div>
+
+

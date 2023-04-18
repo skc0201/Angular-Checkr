@@ -1,0 +1,83 @@
+<!-- <div *ngIf="isLoading" style="text-align: center; margin-top: 200px;">
+  <app-loader></app-loader>
+  <p>Fetching candidate list.....</p>
+</div> -->
+<div>
+  <app-header></app-header>
+</div>
+<div class="candidate-header">
+ <p class="header-text">{{CANDIDATELIST_HEADER}}</p>
+  <div class="header-right">
+    <div class="search-input">
+      <img src="assets/icons/search.svg" alt="" style="padding-left: 12px;">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder={{CANDIDATELIST_SEARCH}} class="no-outline">
+    </div>
+    <img src="assets/icons/filter.svg" alt="" style="margin-inline: 12px; height: 36px; cursor: pointer;" mat-button [matMenuTriggerFor]="menu">
+    <img src="assets/icons/more.svg" alt="" style=" height: 36px;">
+  </div>
+</div>
+
+<mat-menu #menu="matMenu" xPosition="before">
+  <section class="example-section" [formGroup]="checkboxes"  >
+    <span class="filter-heading">{{FILTER}}</span>
+    <mat-divider></mat-divider>
+    <span class="filter-subheading first">{{STATUS}}</span>
+    <div class="checkbox-container">
+    <p><mat-checkbox formControlName="all" color="primary" (ngModelChange)="onChecked('all')">{{FILTER_OPTIONS[0]}}</mat-checkbox></p>
+    <p><mat-checkbox formControlName="clear" color="primary" (ngModelChange)="onChecked('clear')">{{FILTER_OPTIONS[1]}}</mat-checkbox></p>
+    <p><mat-checkbox formControlName="consider" color="primary" (ngModelChange)="onChecked('consider')" id="id-example">{{FILTER_OPTIONS[2]}}</mat-checkbox></p>
+  </div>
+  <span class="filter-subheading">{{ADJUDICATION}}</span>
+    <div class="checkbox-container">
+    <p><mat-checkbox formControlName="engage" color="primary" (ngModelChange)="onChecked('engage')">{{FILTER_OPTIONS[3]}}</mat-checkbox></p>
+    <p><mat-checkbox formControlName="adverse action" color="primary" (ngModelChange)="onChecked('adverse action')">{{FILTER_OPTIONS[4]}}</mat-checkbox></p>
+  </div>
+  </section>
+</mat-menu>
+
+<div class="mat-elevation-z0">
+  <table mat-table  matSort [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="table-header">{{CANDIDATELIST_COLUMNS[0] | uppercase}}</th>
+      <td mat-cell *matCellDef="let element"  style="color: rgba(34, 77, 255, 1); cursor: pointer;"> {{element.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="adjudication">
+      <th mat-header-cell *matHeaderCellDef>{{CANDIDATELIST_COLUMNS[1] | uppercase}}</th>
+      <td mat-cell *matCellDef="let element">
+        <app-chip text="{{element.adjudication=== '' ? '-' :element.adjudication}}" type="{{element.adjudication=== '' ? '-' : element.adjudication=== 'engage' ? 'success':'warn'}}"></app-chip>
+
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>{{CANDIDATELIST_COLUMNS[2] | uppercase}}</th>
+      <td mat-cell *matCellDef="let element">
+        <app-chip text="{{element.status}}" type="{{element.status==='Clear' ? 'success':'warn'}}"></app-chip>
+         </td>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef> {{CANDIDATELIST_COLUMNS[3] | uppercase}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> {{CANDIDATELIST_COLUMNS[4] | uppercase}} </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="CANDIDATELIST_COLUMNS"></tr>
+    <tr
+    mat-row
+    *matRowDef="let row; columns: CANDIDATELIST_COLUMNS;"
+    (click)="onClickname(row)"
+></tr>
+  </table>
+  <div class="paginator">
+  <mat-paginator
+  showFirstLastButtons
+  [pageSizeOptions]="[10, 20]"
+  showFirstLastButtons
+  >
+</mat-paginator>
+</div>
+</div>

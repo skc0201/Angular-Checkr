@@ -1,0 +1,60 @@
+<div *ngIf="isLoading" class="loader">
+<app-loader isSuccess=true></app-loader>
+<p class="loader-text">{{SUCCESS_MESSAGE}}</p>
+</div>
+<div class="dialog-container" *ngIf="!isLoading">
+  <div class="header">
+  <span class="header-text">{{DIALOGBOX_HEADER}}</span>
+      <img  src="assets/icons/cross.svg" alt="" (click)="closeModal()"  style="cursor: pointer;"/>
+   </div>
+   <mat-divider></mat-divider>
+<div class="email-container">
+  <div class="email-from">
+<span class="email-title">From: </span> {{FROM}}
+</div>
+<div class="email-from">
+  <span class="email-title">To: </span> {{candidateDetail.email}}
+  </div>
+  <div class="email-from">
+    <span class="email-title">Subject: </span>  {{EMAIL_SUBJECT}}
+  </div>
+    <div>
+      <ul class="warning-text">
+        <li *ngFor="let item of warningText">{{item}}</li>
+      </ul>
+    </div>
+    <div class="email-content">
+      <div class="email-content-1">
+      Dear {{candidateDetail.name}},
+      <br><br><br>
+      <p>{{EMAIL_CONTENT[0]}}</p>
+      <p>{{EMAIL_CONTENT[1]}} </p>
+      {{EMAIL_CONTENT[2]}}
+    </div>
+    <br>
+      <ul class="checked-options">
+        <li *ngFor="let item of this.data.checkedOptions">{{item}}</li>
+      </ul>
+    <br>
+    <div class="email-content-1">
+      <p>
+       {{EMAIL_CONTENT[3]}} </p>
+         <p>{{EMAIL_CONTENT[4]}}</p>
+         <br>
+        <p>{{EMAIL_CONTENT[5]}}</p>
+        <p>{{EMAIL_CONTENT[6]}}</p>
+    </div>
+    <br>
+      <p class="checkbox-header">{{EMAIL_CONTENT[7]}}</p>
+      <div *ngFor="let item of attachmenttext" class="email-content-1">
+      <img  src="assets/icons/file.svg" alt="" />
+      <span style="margin-left: 4px;">{{item}}</span>
+    </div>
+    <br>
+    <mat-divider></mat-divider>
+    <div class="footer">
+    <button class="btn btn-primary" (click)="onButtonClick()">{{DIALOGBOX_BUTTON}}</button>
+    </div>
+    </div>
+</div>
+</div>

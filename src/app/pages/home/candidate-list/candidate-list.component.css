@@ -1,0 +1,118 @@
+/* .full-width-table {
+  width: 100%;
+  margin-inline: 24px;
+  border: 0.3px solid black;
+} */
+
+table {
+  width: 100%;
+  margin-left: 24px;
+  box-shadow:  0px 4px 28px rgba(45, 45, 47, 0.1);
+  border: 0.4px solid rgba(247, 248, 250, 1);
+  border-radius: 6px;
+}
+
+.mat-column-date {
+  color: rgba(105, 106, 110, 1);
+
+}
+.highlight{
+  color: blue;
+}
+.header-text{
+display: flex;
+color: rgba(44, 44, 46, 1);
+font-size: 16px;
+font-style: medium;
+font-weight: 400;
+padding-left: 16px;
+padding-top: 18px;
+}
+
+.candidate-header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding-right: 30px;
+  background-color: white;
+  border-bottom: 1px solid rgba(229, 231, 237, 1);
+  margin-left: 24px;
+  border-radius: 6px;
+}
+
+.header-right{
+  justify-content: end;
+  float: right;
+  display:flex;
+  align-items: center;
+ }
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+.search-input{
+width: 300px;
+height: 36px;
+align-items: center;
+justify-content: center;
+border: 0.5px solid rgba(229, 231, 237, 1);
+border-radius: 6px;
+}
+
+.no-outline{
+  align-items: center;
+  margin-top: 6px;
+  padding-left: 14px;
+}
+
+.no-outline:focus {
+  outline: none;
+}
+th{
+  background-color: rgba(229, 231, 237, 0.5);
+}
+.example-section {
+  height: 330px;
+  width: 285px;
+}
+.filter-heading{
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 12px;
+  color: rgba(44, 44, 46, 0.6);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  align-items: center;
+}
+.filter-subheading{
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  color: rgba(129, 130, 135, 0.7);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  padding-left: 12px;
+}
+.filter-subheading.first{
+  padding-top: 12px;
+}
+
+.checkbox-container{
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.paginator{
+  padding-left: 24px;
+}
+

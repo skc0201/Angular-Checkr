@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+  margin-left: 12px;
+  margin-right: 8px;
+  border: 0.4px solid rgba(247, 248, 250, 1);
+  justify-self: start;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+.mat-form-field.mat-focused .mat-form-field-label, input.ng-valid+span.mat-form-field-label-wrapper .mat-form-field-label{
+  display: none !important;
+}
+th{
+  background-color: rgba(229, 231, 237, 0.4);
+  height: 36px;
+}
+.expansion-header{
+  height: 56px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  margin-left: 12px;
+}
+.header-title{
+  color: #2C2C2E;
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 16px;
+  display: flex;
+  margin-left: 24px;
+  padding-top: 16px;
+}

@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>{{SIDENAV_HEADER}}</mat-toolbar>
+    <mat-nav-list>
+      <div class="sidenav-list">
+      <a mat-list-item href="#"><img src="assets/icons/home.svg" alt=""/> </a>
+      <a mat-list-item href="/candidatelist"><img src="assets/icons/candidate.svg" alt=""/> </a>
+      <a mat-list-item href="#"><img src="assets/icons/adverse.svg" alt=""/> </a>
+      <a mat-list-item href="#"><img src="assets/icons/log.svg" alt=""/> </a>
+      <a mat-list-item href="#"><img src="assets/icons/analytics.svg" alt=""/> </a>
+      <a mat-list-item href="#"><img src="assets/icons/account.svg" alt=""/> </a>
+      <a mat-list-item href="#"><img src="assets/icons/screening.svg" alt=""/> </a>
+    </div>
+    </mat-nav-list>
+    <mat-nav-list >
+    <div>
+      <mat-divider></mat-divider>
+      <a mat-list-item href="#"><img src="assets/icons/profile.svg" alt=""/> </a>
+    </div>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <!-- Add Content Here -->
+    <div>
+    <router-outlet></router-outlet>
+  </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

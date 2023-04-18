@@ -1,0 +1,19 @@
+.chip-container{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 30px;
+  padding-inline: 12px;
+  width: fit-content;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.success {
+  background-color: rgba(242, 252, 251, 1);
+  color: rgba(23, 160, 118, 1);
+}
+.warn {
+  background-color: rgba(250, 248, 235, 1);
+  color: rgba(160, 136, 23, 1);
+}
