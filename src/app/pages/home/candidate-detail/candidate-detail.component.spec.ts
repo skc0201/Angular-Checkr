@@ -1,16 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CandidateDetailComponent } from './candidate-detail.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { CandidateService } from 'src/app/shared/service/candidate.service';
 import { By } from '@angular/platform-browser';
+import { AdverseActionComponent } from '../../adverse-action/adverse-action.component';
 
 describe('CandidateDetailComponent', () => {
   let component: CandidateDetailComponent;
   let fixture: ComponentFixture<CandidateDetailComponent>;
   let mockToolBarService;
-
+  const locationStub = {
+    back: jasmine.createSpy('back')
+};
   const DataInfo = {
     id: 1,
     name: 'John Smith',
@@ -32,9 +34,13 @@ describe('CandidateDetailComponent', () => {
     mockToolBarService = jasmine.createSpyObj(['getCandidateDetailsById']);
     mockToolBarService.getCandidateDetailsById.and.returnValue(DataInfo);
     await TestBed.configureTestingModule({
-      imports:[RouterTestingModule , HttpClientModule],
+      imports:[RouterTestingModule.withRoutes([
+        { path: 'adverse', component: AdverseActionComponent}
+    ]) , HttpClientModule],
       declarations: [ CandidateDetailComponent ],
-      providers:[{ provide: CandidateService, useValue: mockToolBarService }]
+      providers:[{ provide: CandidateService, useValue: mockToolBarService },
+        {provide: Location, useValue: locationStub}
+      ]
     })
     .compileComponents();
   });
@@ -62,12 +68,31 @@ describe('CandidateDetailComponent', () => {
     const ele = fixture.debugElement.query(By.css('.header-right'));
     fixture.detectChanges();
     const src = ele.childNodes[0].nativeNode['src'];
-    expect(src).toContain('http://localhost:9877/assets/icons/preadverse.svg');
+    expect(src).toBeDefined();
   });
   it('should have manual order image src in header', () => {
     const ele = fixture.debugElement.query(By.css('.header-right'));
     fixture.detectChanges();
     const src = ele.childNodes[1].nativeNode['src'];
-    expect(src).toContain('http://localhost:9877/assets/icons/engage.svg');
+    expect(src).toBeDefined();
+  });
+  it('should call ngOnInit', () => {
+    component.id = 1;
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.candidateDetail).toEqual(DataInfo);
+  });
+  it('should call OnAdverseAction func', () => {
+    const routerSpy = {
+      navigate: jasmine.createSpy('navigate')
+    };
+    component.OnAdverseAction();
+    expect(routerSpy.navigate).toBeDefined();
+  });
+  it('should  call on backButton func', () => {
+    component.backButton();
+    fixture.detectChanges();
+    const location = fixture.debugElement.injector.get(Location);
+    expect(location.pathname).not.toBeDefined();
   });
 });

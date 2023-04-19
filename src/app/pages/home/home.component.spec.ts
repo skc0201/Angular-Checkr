@@ -8,7 +8,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './home.component';
 import { SIDENAV_HEADER } from 'src/app/shared/constants/constant-data';
-import { By } from '@angular/platform-browser';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;

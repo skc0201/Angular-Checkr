@@ -1,19 +1,30 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AdverseActionComponent } from './adverse-action.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { CandidateService } from 'src/app/shared/service/candidate.service';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { By } from '@angular/platform-browser';
+import { of } from 'rxjs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+export class MatDialogMock {
+  open() {
+    return {
+      afterClosed: () => of({action: true})
+    };
+  }
+}
 
 describe('AdverseActionComponent', () => {
   let component: AdverseActionComponent;
   let fixture: ComponentFixture<AdverseActionComponent>;
   let mockToolBarService;
+  const locationStub = {
+    back: jasmine.createSpy('back')
+};
 
   const DataInfo = {
     id: 1,
@@ -42,10 +53,13 @@ describe('AdverseActionComponent', () => {
         ReactiveFormsModule,
         MatDialogModule,
         MatDividerModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        BrowserAnimationsModule
       ],
       declarations: [ AdverseActionComponent ],
-      providers:[{ provide: CandidateService, useValue: mockToolBarService }]
+      providers:[{ provide: CandidateService, useValue: mockToolBarService } , {provide: Location, useValue: locationStub} ,
+        { provide: MatDialog, useClass: MatDialogMock }
+      ]
 
     })
     .compileComponents();
@@ -94,4 +108,31 @@ describe('AdverseActionComponent', () => {
     const board = fixture.debugElement.query(By.css('button')).nativeElement;
     board.click();
   });
+    it('should  Checkbox checked', () => {
+const checkboxElem = fixture.debugElement.query(By.css('mat-checkbox')).nativeElement;
+expect(checkboxElem.checked).toBeFalsy();
+  });
+  it('should  call on Init', () => {
+    component.id =1;
+    component.ngOnInit();
+    fixture.detectChanges();
+expect(component.candidateDetail).toEqual(DataInfo);
+ });
+ it('should  call on backButton func', () => {
+  component.backButton();
+  fixture.detectChanges();
+  const location = fixture.debugElement.injector.get(Location);
+  expect(location.pathname).not.toBeDefined();
+});
+it('should  call on onChecked func', () => {
+  component.onChecked(1);
+  fixture.detectChanges();
+  expect(component.checkboxOptions).toBeDefined();
+});
+it('should  call dialog box', () => {
+  component.id = 1;
+  component.onButtonClick();
+  fixture.detectChanges();
+  expect(component.checkboxOptions).toBeDefined();
+});
 });

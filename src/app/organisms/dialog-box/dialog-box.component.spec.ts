@@ -86,4 +86,10 @@ describe('DialogBoxComponent', () => {
     const board = fixture.debugElement.query(By.css('button')).nativeElement;
     board.click();
   });
+  it('should call onInit', () => {
+    component.data.id =1;
+    component.ngOnInit();
+    fixture.detectChanges();
+expect(component.candidateDetail).toEqual(DataInfo);
+  });
 });

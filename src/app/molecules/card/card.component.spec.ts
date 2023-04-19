@@ -40,5 +40,12 @@ describe('CardComponent', () => {
     const ele = fixture.debugElement.query(By.css('.imgage')).nativeElement;;
     expect(ele['src']).toContain('Assets/icons/candidate.svg');
   });
+  it('should called ngOnit', () => {
+    component.header1='Adjudication';
+    component.header2 = "";
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(component.header2).toEqual("-");
+  });
 
 });
